@@ -82,7 +82,7 @@ public static class StartupExtensions
         app.MapControllers();
 
         // Map Minimal API endpoints
-        app.MapBookEndpoints();
+        app.MapApplicationEndpoints();
 
         // Seed the database in development only
         if (app.Environment.IsDevelopment())

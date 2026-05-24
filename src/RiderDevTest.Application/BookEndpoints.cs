@@ -15,11 +15,11 @@ public static class BookEndpoints
     /// </summary>
     /// <param name="app">The endpoint route builder.</param>
     /// <returns>The endpoint route builder for chaining.</returns>
-    public static IEndpointRouteBuilder MapBookEndpoints(this IEndpointRouteBuilder app)
+    public static IEndpointRouteBuilder MapApplicationEndpoints(this IEndpointRouteBuilder app)
     {
         var apiGroup = app.MapGroup("/api");
 
-        // Map appointment endpoints under /api/appointments
+        // Map book endpoints under /api/book
         apiGroup.MapGroup("/books")
             .WithTags("Books")
             .MapBookEndpoints();

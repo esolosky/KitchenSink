@@ -68,7 +68,7 @@ public static class GetAllBooks
 
         private bool IsValidAuthor(string? author)
         {
-            return Regex.IsMatch(
+            return author != null && Regex.IsMatch(
                 author,
                 @"^[a-zA-Z0-9\s'"".,;:!?&()\-]+$"
             );

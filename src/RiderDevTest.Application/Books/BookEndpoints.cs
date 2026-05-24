@@ -16,7 +16,7 @@ public static class BookEndpoints
     internal static RouteGroupBuilder MapBookEndpoints(this RouteGroupBuilder group)
     {
         group.MapGet("/", GetAllBooks.Endpoint.Handle)
-            .WithName("GetAppointmentById")
+            .WithName("GetAllBooks")
             .Produces<PaginatedList<BookDto>>(StatusCodes.Status200OK)
             .ProducesValidationProblem()
             .AddEndpointFilter<ValidationFilter<GetAllBooks.Query>>();

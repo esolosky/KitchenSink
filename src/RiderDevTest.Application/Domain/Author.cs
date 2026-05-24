@@ -17,5 +17,16 @@ public class Author : BaseEntity
         FirstName = firstName;
         LastName = lastName;
         Suffix = suffix;
+        SearchName = BuildSearchName();
+    }
+
+    private string BuildSearchName()
+    {
+        var searchName = $"{FirstName.ToLower()} {LastName.ToLower()}";
+        if (!string.IsNullOrEmpty(Suffix))
+        {
+            searchName = $"{searchName}, {Suffix.ToLower()}";
+        }
+        return searchName;
     }
 }
